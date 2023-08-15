@@ -7,8 +7,8 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@features/*": ["src/features/*"],
       "@global/*": ["src/global/*"],
+      "@users-types/*": ["src/features/users/types/*"]
     },
 
     /* Bundler mode */

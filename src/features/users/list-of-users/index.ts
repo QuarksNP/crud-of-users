@@ -1,0 +1,1 @@
+export * from './list-of-user-component/list-of-users.component'
