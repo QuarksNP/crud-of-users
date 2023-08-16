@@ -3,9 +3,11 @@ import type { PayloadAction, User, UserId, UserWithId } from "@users-types/types
 
 const initialState: UserWithId[] = (() => {
     const persistedState = localStorage.getItem("__users__state__");
-    if(persistedState) {
+    if (persistedState) {
         return JSON.parse(persistedState).users
     }
+
+    return []
 })();
 
 export const usersSlice = createSlice({
@@ -16,13 +18,19 @@ export const usersSlice = createSlice({
             const id = crypto.randomUUID()
             return [...state, { id, ...action.payload }]
         },
+
+        updateUserById: (state, action: PayloadAction<UserWithId>) => {
+            const currentUser = action.payload
+            return state.map(user => user.id === currentUser.id ? currentUser : user)
+        },
+
         deleteUserById: (state, action: PayloadAction<UserId>) => {
             const id = action.payload
-            return state.filter(users => users.id !== id)
+            return state.filter(user => user.id !== id)
         }
     },
 })
 
 export default usersSlice.reducer
 
-export const { addNewUser, deleteUserById } = usersSlice.actions
+export const { addNewUser, updateUserById, deleteUserById } = usersSlice.actions

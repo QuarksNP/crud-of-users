@@ -2,7 +2,9 @@ import { UserId } from "@users-types/types"
 
 import { useAppDispatch } from "./list-of-users.dispatch"
 
-import { addNewUser, deleteUserById } from "./users-slice"
+import { addNewUser, deleteUserById, updateUserById } from "./users-slice"
+
+import { getFormData } from "../utils/getFormData"
 import { FormEvent } from "react"
 
 export const useUsersActions = () => {
@@ -14,16 +16,29 @@ export const useUsersActions = () => {
         const form = event.currentTarget
         const formData = new FormData(form)
 
-        const name = formData.get('name') as string
-        const role = formData.get('role') as string
-        const picture = formData.get('picture') as string
+        const {name, role, picture} = getFormData(formData)
 
         dispatch(addNewUser({ name, role, picture }))
+
+        form.reset()
     }
 
-    const handleRemoveUser = (id: UserId) => {
+    const handleUpdateUser = (event: FormEvent<HTMLFormElement>, id: UserId) => {
+        event.preventDefault()
+
+        const form = event.currentTarget
+        const formData = new FormData(form)
+
+        const {name, role, picture} = getFormData(formData)
+
+        dispatch(updateUserById({ name, role, picture, id }))
+
+        form.reset()
+    }
+
+    const handleDeleteUser = (id: UserId) => {
         dispatch(deleteUserById(id))
     }
 
-    return { handleCreateUser, handleRemoveUser }
+    return { handleCreateUser, handleUpdateUser, handleDeleteUser }
 }

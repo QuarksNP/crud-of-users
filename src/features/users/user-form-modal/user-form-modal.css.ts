@@ -2,13 +2,29 @@ import { Kanit } from "@global/styles/global-styles.css";
 import { vars } from "@global/styles/vars.css";
 import { StyleRule, style } from "@vanilla-extract/css";
 
-export const form = style({
+export const article = style({
+    position: "fixed",
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '100%',
+    maxWidth: '460px',
     padding: vars.space.Medium,
     backgroundColor: vars.colors.White,
     fontFamily: Kanit,
-    maxWidth: '500px',
-
+    zIndex: 20
 })
+
+export const close = style({
+    display: 'flex',
+    justifyContent: 'end',
+
+    '& > button': {
+        background: 'none',
+        border: 'none',
+        cursor: 'pointer',
+    }
+} as StyleRule)
 
 export const fieldset = style({
     display: 'flex',
