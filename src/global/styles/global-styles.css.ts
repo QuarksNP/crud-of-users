@@ -3,8 +3,8 @@ import { vars } from "./vars.css";
 
 export const Kanit = 'Kanit, sans-serif';
 
-globalStyle('body', {
-    backgroundColor: vars.colors.Gray,
+globalStyle('#root', {
+    backgroundColor: vars.colors.Black_600,
     height: '100vh'
 })
 

@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 import { usersStore } from "..";
 
 type Children = React.ReactNode
@@ -12,8 +12,10 @@ export type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface User {
     name: string;
+    description: string;
     role: string;
     picture: string;
+    cover: string;
 }
 
 export type UserId = string
@@ -65,12 +67,14 @@ export interface UpdateUserItemById {
 
 export interface HandleUserItem {
     user: UserWithId,
-    children: Children,
     handleDelete: (id: UserId) => void
     handleUserById: (id: UserId) => void,
     handleOpenModal: (id: ModalId) => void
 
+}
 
+export interface Filter {
+    handleChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export type RootState = ReturnType<typeof usersStore.getState>

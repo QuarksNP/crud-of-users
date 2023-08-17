@@ -16,9 +16,9 @@ export const useUsersActions = () => {
         const form = event.currentTarget
         const formData = new FormData(form)
 
-        const {name, role, picture} = getFormData(formData)
+        const {name, description, role, picture, cover} = getFormData(formData)
 
-        dispatch(addNewUser({ name, role, picture }))
+        dispatch(addNewUser({ name, role, picture, cover, description }))
 
         form.reset()
     }
@@ -29,9 +29,9 @@ export const useUsersActions = () => {
         const form = event.currentTarget
         const formData = new FormData(form)
 
-        const {name, role, picture} = getFormData(formData)
+        const {name, description, role, picture, cover} = getFormData(formData)
 
-        dispatch(updateUserById({ name, role, picture, id }))
+        dispatch(updateUserById({ name, role, picture, cover, description, id }))
 
         form.reset()
     }

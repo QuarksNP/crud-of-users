@@ -1,10 +1,11 @@
 import { UserItem } from "./user-item.component";
-import { Background, Profile } from "../../ui/index";
+import { Background } from "../../ui/index";
 
 import { UsersMap } from "@users-types/types";
 
 import * as style from "./list-of-users.css";
 import { UserFormModal } from "..";
+import React from "react";
 
 export const ListOfUsers: React.FC<UsersMap> = ({
   users,
@@ -19,33 +20,25 @@ export const ListOfUsers: React.FC<UsersMap> = ({
     <article className={style.article}>
       {users.map((user) => {
         return (
-          <UserItem
-            key={user.id}
-            handleDelete={handleDeleteUser}
-            {...{ user, handleUserById, handleOpenModal }}
-          >
-            <Profile {...user} key={user.id}>
-              <span
-                className={
-                  style.role[user.role as "member" | "manager" | "admin"]
-                }
-              >
-                {user.role}
-              </span>
-            </Profile>
-
+          <React.Fragment key={user.id}>
+            <UserItem
+              key={user.id}
+              handleDelete={handleDeleteUser}
+              {...{ user, handleUserById, handleOpenModal }}
+            />
             {currentId === user.id && (
-              <>
-                <Background active={openModal} />
+              <React.Fragment key={user.id}>
+                <Background active={openModal} key={user.id}/>
                 <UserFormModal
+                  key={user.id}
                   open={openModal}
                   title={`Edit user: ${user.name}`}
                   handleSubmit={(event) => handleUpdateUser(event, user.id)}
                   handleClick={handleOpenModal}
                 />
-              </>
+              </React.Fragment>
             )}
-          </UserItem>
+          </React.Fragment>
         );
       })}
     </article>

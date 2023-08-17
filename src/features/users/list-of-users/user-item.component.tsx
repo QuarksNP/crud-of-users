@@ -7,14 +7,13 @@ import React from "react";
 
 export const UserItem: React.FC<HandleUserItem> = ({
   user,
-  children,
   handleDelete,
   handleUserById,
   handleOpenModal,
 }) => {
   return (
     <section className={style.section}>
-      {children}
+
       <div className={style.actionsContainer}>
         <button
           type="button"
@@ -25,9 +24,30 @@ export const UserItem: React.FC<HandleUserItem> = ({
         >
           <PencilIcon />
         </button>
+
         <button type="button" onClick={() => handleDelete(user.id)}>
           <XMarkIcon />
         </button>
+      </div>
+
+      <div className={style.descContainer}>
+        <picture className={style.pictures_container}>
+          <img className={style.profile_cover} src={user.cover} />
+          <img className={style.profile_picture} src={user.picture} />
+        </picture>
+
+        <div className={style.basicDesc}>
+          <span className={style.name}>{user.name}</span>
+
+          <span
+            className={style.role[user.role as "member" | "manager" | "admin"]}
+          >
+            {user.role}
+          </span>
+          <p className={style.description}>{user.description}</p>
+
+        </div>
+
       </div>
     </section>
   );
