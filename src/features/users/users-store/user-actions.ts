@@ -18,6 +18,8 @@ export const useUsersActions = () => {
 
         const {name, description, role, picture, cover} = getFormData(formData)
 
+        console.log(picture)
+
         dispatch(addNewUser({ name, role, picture, cover, description }))
 
         form.reset()

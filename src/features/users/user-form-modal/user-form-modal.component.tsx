@@ -35,6 +35,7 @@ export const UserFormModal: React.FC<UserModal> = ({
             name="name"
             type="text"
             placeholder="Eg. Marco Scott"
+            required
           />
 
           <label htmlFor="role">Select a role</label>
