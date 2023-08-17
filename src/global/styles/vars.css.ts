@@ -14,6 +14,10 @@ export const vars = createGlobalTheme(':root', {
         Red: "#EC647D",
     },
 
+    hover_colors: {
+        Light_Green: "#12ED78"
+    },
+
     space: {
         Default: '0',
         Smaller: '0.15rem',

@@ -7,6 +7,7 @@ export const ButtonOpenModal: React.FC<ButtonModal> = ({ handleClick }) => {
   return (
     <button type="button" className={style.button} onClick={() => handleClick({openCreateUserModal: true})}>
       <PlusIcon width={25}/>
+      <span>Add a new user</span>
     </button>
   );
 };
