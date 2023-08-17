@@ -51,6 +51,7 @@ export const UserFormModal: React.FC<UserModal> = ({
             name="picture"
             type="url"
             placeholder="Eg. https://w.example.cc/full/9m/picture-9mjoy1.png"
+            autoComplete="off"
           />
 
           <label htmlFor="picture_cover">Photo Cover</label>
@@ -59,6 +60,8 @@ export const UserFormModal: React.FC<UserModal> = ({
             name="cover"
             type="url"
             placeholder="Eg. https://w.example.cc/full/9m/cover-9mjoy1.png"
+            autoComplete="off"
+
           />
 
           <label htmlFor="description">Your Description</label>
