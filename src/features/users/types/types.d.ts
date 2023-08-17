@@ -14,8 +14,8 @@ export interface User {
     name: string;
     description: string;
     role: string;
-    picture: string;
-    cover: string;
+    picture?: string;
+    cover?: string;
 }
 
 export type UserId = string

@@ -23,7 +23,7 @@ export const useUsersActions = () => {
 
         const verifyPicture = await fetch(picture)
             .then((response) => {
-                return response.url
+                if (response.ok) return response.url
             })
             .catch((err) => {
                 console.log(err)
@@ -31,21 +31,19 @@ export const useUsersActions = () => {
             })
         const verifyCover = await fetch(cover)
             .then((response) => {
-                return response.url
+                if (response.ok) return response.url
             })
             .catch((err) => {
                 console.log(err)
                 return IMAGE_ERROR
             })
 
-        console.log(verifyPicture)
-
         dispatch(addNewUser({ name, role, picture: verifyPicture, cover: verifyCover, description }))
 
         form.reset()
     }
 
-    const handleUpdateUser = (event: FormEvent<HTMLFormElement>, id: UserId) => {
+    const handleUpdateUser = async (event: FormEvent<HTMLFormElement>, id: UserId) => {
         event.preventDefault()
 
         const form = event.currentTarget
@@ -53,7 +51,24 @@ export const useUsersActions = () => {
 
         const { name, description, role, picture, cover } = getFormData(formData)
 
-        dispatch(updateUserById({ name, role, picture, cover, description, id }))
+        const verifyPicture = await fetch(picture)
+            .then((response) => {
+                if (response.ok) return response.url
+            })
+            .catch((err) => {
+                console.log(err)
+                return IMAGE_ERROR
+            })
+        const verifyCover = await fetch(cover)
+            .then((response) => {
+                if (response.ok) return response.url
+            })
+            .catch((err) => {
+                console.log(err)
+                return IMAGE_ERROR
+            })
+
+        dispatch(updateUserById({ name, role, picture: verifyPicture, cover: verifyCover, description, id }))
 
         form.reset()
     }
