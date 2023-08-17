@@ -1,3 +1,3 @@
 export type UsersPageBackground = {
-    active: boolean | undefined;
+    active?: boolean;
 }

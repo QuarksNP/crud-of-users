@@ -9,6 +9,7 @@ const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
 }
 
 const asyncWithLocalStorageMiddleware: Middleware = (store) => (next) => (action) => {
+    console.log(store)
     const { payload,  type} = action
 
     next(action)

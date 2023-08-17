@@ -10,7 +10,7 @@ export const UserFormModal: React.FC<UserModal> = ({
   handleClick,
   handleSubmit,
 }) => {
-  if (!open) return;
+  if (!open) return null;
 
   return (
     <article className={style.article}>
