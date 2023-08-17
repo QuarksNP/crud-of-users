@@ -1,13 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import usersReducer from "./users-slice"
+import { type Middleware, configureStore } from "@reduxjs/toolkit";
+import usersReducer from "./users-slice";
+
 import { notification } from "../utils/notification";
 
-const localStorageMiddleware = (store) => (next) => (action) => {
+const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
     next(action);
     localStorage.setItem("__users__state__", JSON.stringify(store.getState()))
 }
 
-const asyncWithLocalStorageMiddleware = (store) => (next) => (action) => {
+const asyncWithLocalStorageMiddleware: Middleware = (store) => (next) => (action) => {
     const { payload,  type} = action
 
     next(action)

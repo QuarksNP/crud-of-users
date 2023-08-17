@@ -46,7 +46,7 @@ export type UsersMap = Users & {
     handleUserById: (id: UserId) => void,
     handleOpenModal: (id: ModalId) => void
     openModal?: boolean,
-    currentId: string
+    currentId: UserId
 }
 
 export interface ProfileItem extends Omit<User, 'role'> {
@@ -70,7 +70,6 @@ export interface HandleUserItem {
     handleDelete: (id: UserId) => void
     handleUserById: (id: UserId) => void,
     handleOpenModal: (id: ModalId) => void
-
 }
 
 export interface Filter {

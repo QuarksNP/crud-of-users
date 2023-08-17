@@ -1,10 +1,10 @@
-import { UserWithId } from "@users-types/types";
+import type { UserId } from "@users-types/types";
 import { useState } from "react";
 
 export const useGetUserId = () => {
-  const [currentId, setCurrentId] = useState<UserWithId | null>(null);
+  const [currentId, setCurrentId] = useState<UserId>('');
 
-  function handleUserById(id: UserWithId) {
+  function handleUserById(id: UserId) {
     setCurrentId(id);
   }
 
