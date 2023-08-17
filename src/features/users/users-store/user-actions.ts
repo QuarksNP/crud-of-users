@@ -21,7 +21,7 @@ export const useUsersActions = () => {
 
         const { name, description, role, picture, cover } = getFormData(formData)
 
-        const verifyPicture = await fetch(picture)
+        const verifyPicture = await fetch(picture, { mode: 'no-cors' })
             .then((response) => {
                 if (response.ok) return response.url
             })
@@ -29,7 +29,7 @@ export const useUsersActions = () => {
                 console.log(err)
                 return IMAGE_ERROR
             })
-        const verifyCover = await fetch(cover)
+        const verifyCover = await fetch(cover, { mode: 'no-cors' })
             .then((response) => {
                 if (response.ok) return response.url
             })
@@ -51,7 +51,7 @@ export const useUsersActions = () => {
 
         const { name, description, role, picture, cover } = getFormData(formData)
 
-        const verifyPicture = await fetch(picture)
+        const verifyPicture = await fetch(picture, { mode: 'no-cors' })
             .then((response) => {
                 if (response.ok) return response.url
             })
@@ -59,7 +59,7 @@ export const useUsersActions = () => {
                 console.log(err)
                 return IMAGE_ERROR
             })
-        const verifyCover = await fetch(cover)
+        const verifyCover = await fetch(cover, { mode: 'no-cors' })
             .then((response) => {
                 if (response.ok) return response.url
             })
