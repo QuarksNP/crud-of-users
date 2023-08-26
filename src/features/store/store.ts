@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import usersReducer from "../users/users-store/users-slice"
+import usersReducer from "../users/users-store/users.slice"
 
 import { localStorageMiddleware, asyncWithLocalStorageMiddleware } from "../users";
 

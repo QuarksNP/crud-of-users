@@ -1,8 +1,8 @@
 import { UserId } from "@users-types/types"
 
-import { useAppDispatch } from "./list-of-users.dispatch"
+import { useAppDispatch } from "./users.dispatch"
 
-import { addNewUser, deleteUserById, updateUserById } from "./users-slice"
+import { addNewUser, deleteUserById, updateUserById } from "./users.slice"
 
 import { getFormData } from "../users-utils/getFormData"
 
