@@ -4,10 +4,11 @@ import type { PayloadAction, User, UserId, UserWithId } from "@users-types/types
 const initialState: UserWithId[] = (() => {
     const persistedState = localStorage.getItem("__users__state__");
     if (persistedState) {
-        return JSON.parse(persistedState).users
+        const usersStorage = JSON.parse(persistedState).users
+        return usersStorage
     }
 
-    return []
+    return[]
 })();
 
 export const usersSlice = createSlice({

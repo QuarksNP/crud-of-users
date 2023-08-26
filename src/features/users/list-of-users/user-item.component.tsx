@@ -3,7 +3,6 @@ import type { HandleUserItem } from "@users-types/types";
 import { XMarkIcon, PencilIcon } from "@heroicons/react/24/outline";
 
 import * as style from "./user-item.css";
-import React from "react";
 
 export const UserItem: React.FC<HandleUserItem> = ({
   user,

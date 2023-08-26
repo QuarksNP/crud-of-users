@@ -1,7 +1,7 @@
 import { type Middleware, configureStore } from "@reduxjs/toolkit";
 import usersReducer from "./users-slice";
 
-import { notification } from "../utils/notification";
+import { notification } from "../users-utils/notification";
 
 const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
     next(action);

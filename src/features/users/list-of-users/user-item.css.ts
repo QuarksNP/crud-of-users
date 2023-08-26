@@ -35,9 +35,9 @@ export const section = style({
     flexDirection: 'row-reverse',
     alignItems: 'start',
     justifyContent: 'space-between',
-    boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
     borderRadius: '5px',
-    backgroundColor: vars.colors.Black_400,
+    boxShadow: '0px 10px 15px -3px rgba(0,0,0,0.1)',
+    background: vars.colors.Black_400,
     color: vars.colors.White,
 })
 

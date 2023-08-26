@@ -29,45 +29,60 @@ export const UserFormModal: React.FC<UserModal> = ({
         <span>Believe in the best to do the best</span>
 
         <fieldset className={style.fieldset}>
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Eg. Marco Scott"
-            required
-          />
+          <article className={style.container_info}>
+            <div>
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Eg. Marco Scott"
+                required
+              />
+            </div>
 
-          <label htmlFor="role">Select a role</label>
-          <select id="role" name="role">
-            <option value="member">Member</option>
-            <option value="manager">Manager</option>
-            <option value="admin">Admin</option>
-          </select>
+            <div>
+              <label htmlFor="role">Select a role</label>
+              <select id="role" name="role">
+                <option value="admin">Admin</option>
+                <option value="manager">Manager</option>
+                <option value="member">Member</option>
+              </select>
+            </div>
+          </article>
 
-          <label htmlFor="picture_profile">Photo Profile</label>
-          <input
-            id="picture_profile"
-            name="picture"
-            type="url"
-            placeholder="Eg. https://w.example.cc/full/9m/picture-9mjoy1.png"
-            autoComplete="off"
-          />
+          <article className={style.container_url}>
+            <div>
+              <label htmlFor="picture_profile">Photo Profile</label>
+              <input
+                id="picture_profile"
+                name="picture"
+                type="url"
+                placeholder="Eg. https://w.example.cc.png"
+                autoComplete="off"
+              />
+            </div>
 
-          <label htmlFor="picture_cover">Photo Cover</label>
-          <input
-            id="picture_cover"
-            name="cover"
-            type="url"
-            placeholder="Eg. https://w.example.cc/full/9m/cover-9mjoy1.png"
-            autoComplete="off"
+            <div>
+              <label htmlFor="picture_cover">Photo Cover</label>
+              <input
+                id="picture_cover"
+                name="cover"
+                type="url"
+                placeholder="Eg. https://w.example.cc.png"
+                autoComplete="off"
+              />
+            </div>
+          </article>
 
-          />
-
-          <label htmlFor="description">Your Description</label>
-          <textarea id="description" name="description">
-            Hello world!, this is a example😋
-          </textarea>
+          <article className={style.container_desc}>
+            <label htmlFor="description">Your Description</label>
+            <textarea
+              id="description"
+              name="description"
+              defaultValue={"Hello world!, this is a example😋"}
+            ></textarea>
+          </article>
         </fieldset>
 
         <button className={style.submit} type="submit">

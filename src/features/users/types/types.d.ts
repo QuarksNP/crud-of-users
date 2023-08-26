@@ -37,7 +37,7 @@ export interface UserModal {
     open?: boolean;
     title: string;
     handleClick: (props: Modal) => void,
-    handleSubmit: (event: FormEvent<HTMLFormElement>) => void
+    handleSubmit: (event: FormEvent<HTMLFormElement>, id?) => void
 }
 
 export type UsersMap = Users & {
