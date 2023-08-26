@@ -1,13 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import usersReducer from "../users/users-store/users.slice"
+import rootReducer from "./root-reducers";
 
 import { localStorageMiddleware, asyncWithLocalStorageMiddleware } from "../users";
 
 export const store = configureStore({
-    reducer: {
-        users: usersReducer,
-    },
-
+    reducer: rootReducer,
     middleware: [localStorageMiddleware, asyncWithLocalStorageMiddleware]
 })

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { store } from "./features/store/store.ts";
+import { store } from "./features/store/index.ts";
 
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";

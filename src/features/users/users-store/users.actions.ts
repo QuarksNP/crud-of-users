@@ -19,7 +19,6 @@ export const useUsersActions = () => {
 
         const { name, description, role, picture, cover } = getFormData(formData)
 
-
         if (id) {
             dispatch(updateUserById({ name, role, picture, cover, description, id }))
 
