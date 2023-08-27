@@ -3,26 +3,20 @@ import type { HandleUserItem } from "@users-types/types";
 import { XMarkIcon, PencilIcon } from "@heroicons/react/24/outline";
 
 import * as style from "./user-item.css";
+import { Link } from "wouter";
 
 export const UserItem: React.FC<HandleUserItem> = ({
   user,
   handleDelete,
-  handleUserById,
-  handleOpenModal,
 }) => {
   return (
     <section className={style.section}>
-
       <div className={style.actionsContainer}>
-        <button
-          type="button"
-          onClick={() => {
-            handleUserById(user.id);
-            handleOpenModal({ openUpdateUserModal: true });
-          }}
-        >
-          <PencilIcon />
-        </button>
+        <Link href={user.id}>
+          <button type="button">
+            <PencilIcon />
+          </button>
+        </Link>
 
         <button type="button" onClick={() => handleDelete(user.id)}>
           <XMarkIcon />
@@ -44,9 +38,7 @@ export const UserItem: React.FC<HandleUserItem> = ({
             {user.role}
           </span>
           <p className={style.description}>{user.description}</p>
-
         </div>
-
       </div>
     </section>
   );

@@ -3,11 +3,6 @@ import { usersStore } from "..";
 
 type Children = React.ReactNode
 
-export type Modal = {
-    openCreateUserModal?: boolean, 
-    openUpdateUserModal?: boolean
-}
-
 export type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface User {
@@ -35,18 +30,13 @@ export interface Users {
 
 export interface UserModal {
     open?: boolean;
-    title: string;
-    handleClick: (props: Modal) => void,
-    handleSubmit: (event: FormEvent<HTMLFormElement>, id?) => void
+    children: Children;
+    handleCloseModal: (props: Modal) => void,
 }
 
 export type UsersMap = Users & {
     handleDeleteUser: (id: UserId) => void,
     handleUpdateUser: (event: FormEvent<HTMLFormElement>, id: UserId) => void
-    handleUserById: (id: UserId) => void,
-    handleOpenModal: (id: ModalId) => void
-    openModal?: boolean,
-    currentId: UserId
 }
 
 export interface ProfileItem extends Omit<User, 'role'> {
@@ -68,8 +58,6 @@ export interface UpdateUserItemById {
 export interface HandleUserItem {
     user: UserWithId,
     handleDelete: (id: UserId) => void
-    handleUserById: (id: UserId) => void,
-    handleOpenModal: (id: ModalId) => void
 }
 
 export interface Filter {

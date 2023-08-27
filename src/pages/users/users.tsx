@@ -1,12 +1,12 @@
 import {
   ButtonOpenModal,
   UserFormModal,
+  UserContainerModal,
   FilterUsers,
   ListOfUsers,
   useAppSelector,
   useUsersActions,
   useOpenModal,
-  useGetUserId,
   useFilterUsersByName,
 } from "../../features/users";
 
@@ -20,12 +20,7 @@ export default function UsersPage() {
   const { usersFiltered, handleFilterUsersByName } =
     useFilterUsersByName(users);
 
-  const {
-    openModal: { openCreateUserModal, openUpdateUserModal },
-    handleOpenModal,
-  } = useOpenModal();
-
-  const { currentId, handleUserById } = useGetUserId();
+  const { openModal, handleOpenModal } = useOpenModal();
 
   const { handleDeleteUser, handleUser } = useUsersActions();
 
@@ -35,41 +30,32 @@ export default function UsersPage() {
         <h1>There isn't users yet😥</h1>
         <ButtonOpenModal handleClick={handleOpenModal} />
 
-        <Background active={openCreateUserModal} />
+        <Background active={openModal} />
 
-        <UserFormModal
-          open={openCreateUserModal}
-          title={"Add members to team"}
-          handleSubmit={handleUser}
-          handleClick={handleOpenModal}
-        />
+        <UserContainerModal open={openModal} handleCloseModal={handleOpenModal}>
+          <UserFormModal handleSubmit={handleUser} />
+        </UserContainerModal>
       </article>
     );
 
   return (
     <section className={style.section}>
-      <Background active={openCreateUserModal} />
+      <Background active={openModal} />
 
       <header className={style.header}>
         <ButtonOpenModal handleClick={handleOpenModal} />
         <FilterUsers handleChange={handleFilterUsersByName} />
       </header>
 
-      <UserFormModal
-        open={openCreateUserModal}
-        title={"Add members to team"}
-        handleSubmit={handleUser}
-        handleClick={handleOpenModal}
-      />
+      <UserContainerModal open={openModal} handleCloseModal={handleOpenModal}>
+        <UserFormModal handleSubmit={handleUser} />
+      </UserContainerModal>
+      
       <ListOfUsers
-        openModal={openUpdateUserModal}
         users={usersFiltered.length ? usersFiltered : users}
         handleUpdateUser={handleUser}
         {...{
-          currentId,
           handleDeleteUser,
-          handleOpenModal,
-          handleUserById,
         }}
       />
     </section>

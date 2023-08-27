@@ -1,6 +1,6 @@
 import { type Middleware } from "@reduxjs/toolkit";
 
-import { notification } from "../users-utils/notification";
+import { notification } from "..";
 
 export const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
     next(action);

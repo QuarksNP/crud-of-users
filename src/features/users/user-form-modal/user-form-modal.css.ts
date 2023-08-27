@@ -43,7 +43,7 @@ export const fieldset = style({
     flexDirection: 'column',
     border: 'none',
     margin: `${vars.space.Medium} 0`,
-    color: vars.colors.Gray_50,
+    color: vars.colors.White,
     gap: vars.space.Large,
 
 } as StyleRule)
@@ -86,6 +86,7 @@ export const container_url = style({
             border: 'none',
             background: 'none',
             borderBottom: `1px solid ${vars.colors.Gray_50}`,
+            color: vars.colors.White,
         },
     }
 } as StyleRule)

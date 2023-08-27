@@ -5,7 +5,7 @@ export const ButtonCloseModal: React.FC<ButtonModal> = ({ handleClick }) => {
   return (
     <button
       type="button"
-      onClick={() => handleClick({ openCreateUserModal: false })}
+      onClick={() => handleClick(false)}
     >
       <XMarkIcon width={25} />
     </button>

@@ -1,17 +1,10 @@
-import { Modal } from "@users-types/types"
 import { useState } from "react"
 
 export const useOpenModal = () => {
-    const [openModal, setOpenModal] = useState<Modal>({
-        openCreateUserModal: false,
-        openUpdateUserModal: false,
+    const [openModal, setOpenModal] = useState(false)
 
-    })
-
-    function handleOpenModal(props: { openCreateUserModal?: boolean, openUpdateUserModal?: boolean }) {
-        setOpenModal({
-            ...props
-        })
+    function handleOpenModal(value: boolean) {
+        setOpenModal(value)
     }
 
     return { openModal, handleOpenModal }

@@ -4,14 +4,14 @@ import { useAppDispatch } from "./users.dispatch"
 
 import { addNewUser, deleteUserById, updateUserById } from "./users.slice"
 
-import { getFormData } from "../users-utils/getFormData"
+import { getFormData } from ".."
 
 import { FormEvent } from "react"
 
 export const useUsersActions = () => {
     const dispatch = useAppDispatch()
 
-    const handleUser = async (event: FormEvent<HTMLFormElement>, id: UserId) => {
+    const handleUser = (event: FormEvent<HTMLFormElement>, id?: UserId) => {
         event.preventDefault()
 
         const form = event.currentTarget
