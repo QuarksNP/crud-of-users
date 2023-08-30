@@ -14,7 +14,7 @@ export default function UserByIdPage() {
 
   const { handleUser } = useUsersActions();
 
-  const [, params] = useRoute("/:id");
+  const [, params] = useRoute("/user/:id");
 
   const currentUser = getUserById(params?.id, users);
 

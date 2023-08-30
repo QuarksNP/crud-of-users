@@ -12,7 +12,7 @@ export const UserItem: React.FC<HandleUserItem> = ({
   return (
     <section className={style.section}>
       <div className={style.actionsContainer}>
-        <Link href={user.id}>
+        <Link href={`user/${user.id}`}>
           <button type="button">
             <PencilIcon />
           </button>
