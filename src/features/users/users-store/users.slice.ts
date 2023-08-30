@@ -8,7 +8,7 @@ const initialState: UserWithId[] = (() => {
         return usersStorage
     }
 
-    return[]
+    return []
 })();
 
 export const usersSlice = createSlice({
@@ -17,8 +17,9 @@ export const usersSlice = createSlice({
     reducers: {
         addNewUser: (state, action: PayloadAction<User>) => {
             const id = crypto.randomUUID()
-            
-            return [...state, { id, ...action.payload }]
+            const todosId: typeof crypto.randomUUID[] = [];
+
+            return [...state, { id, todosId, ...action.payload }]
         },
 
         updateUserById: (state, action: PayloadAction<UserWithId>) => {
