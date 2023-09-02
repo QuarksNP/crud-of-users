@@ -1,7 +1,6 @@
-import { Kanit, vars } from "@global/styles";
-import { StyleRule, style } from "@vanilla-extract/css";
+import { Kanit, vars, baseGreenColorTransition } from "@global/styles";
 
-import { baseGreenColorTransition } from "@global/styles";
+import { StyleRule, style } from "@vanilla-extract/css";
 
 export const button = style([baseGreenColorTransition, {
     border: 'none',

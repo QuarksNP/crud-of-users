@@ -1,4 +1,4 @@
-import type { AppDispatch } from "@users-types/types"
+import type { AppDispatch } from "@global-types/types"
 
 import { useDispatch } from "react-redux";
 

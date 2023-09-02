@@ -1,4 +1,5 @@
 import { StyleRule, style } from "@vanilla-extract/css";
+
 import { vars } from ".";
 
 export const baseGreenColorTransition = style({

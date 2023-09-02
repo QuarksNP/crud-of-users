@@ -8,3 +8,6 @@ export const store = configureStore({
     reducer: rootReducer,
     middleware: [localStorageMiddleware, asyncWithLocalStorageMiddleware]
 })
+
+export * from "./useDispatch"
+export * from "./useSelector"

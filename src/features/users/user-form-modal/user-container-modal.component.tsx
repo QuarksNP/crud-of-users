@@ -1,4 +1,4 @@
-import { UserModal } from "@users-types/types";
+import { UserModal } from "@global-types/types";
 
 import { ButtonCloseModal } from "./Button-close-modal.component";
 

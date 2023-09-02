@@ -1,4 +1,4 @@
-import type { HandleUserItem } from "@users-types/types";
+import type { HandleUserItem } from "@global-types/types";
 
 import { XMarkIcon, PencilIcon } from "@heroicons/react/24/outline";
 

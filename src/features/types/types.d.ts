@@ -1,9 +1,17 @@
 import { ChangeEvent, FormEvent } from "react";
-import { usersStore } from "..";
+import { usersStore } from "../users";
 
 type Children = React.ReactNode
 
 export type { PayloadAction } from "@reduxjs/toolkit";
+
+
+export type BackgroundType = {
+    active: boolean
+}
+
+export type UserId = string
+
 
 export interface User {
     name: string;
@@ -12,8 +20,6 @@ export interface User {
     picture?: string;
     cover?: string;
 }
-
-export type UserId = string
 
 export interface ButtonModal {
     handleClick: (props: Modal) => void,
@@ -27,6 +33,7 @@ export interface UserWithId extends User {
 export interface Users {
     users: UserWithId[]
 }
+
 
 export interface UserModal {
     open?: boolean;

@@ -1,5 +1,6 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Filter } from "@users-types/types";
+
+import { Filter } from "@global-types/types";
 
 import * as style from "./FilterUsers.css";
 

@@ -1,4 +1,4 @@
-import { type UserId } from "@users-types/types";
+import { type UserId } from "@global-types/types";
 
 import * as style from "./user-form-modal.css"
 

@@ -1,5 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ButtonModal } from "@users-types/types";
+
+import { ButtonModal } from "@global-types/types";
 
 export const ButtonCloseModal: React.FC<ButtonModal> = ({ handleClick }) => {
   return (

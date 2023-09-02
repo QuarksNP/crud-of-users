@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction, User, UserId, UserWithId } from "@users-types/types";
+import type { PayloadAction, User, UserId, UserWithId } from "@global-types/types";
 
 const initialState: UserWithId[] = (() => {
     const persistedState = localStorage.getItem("__users__state__");
@@ -17,9 +17,8 @@ export const usersSlice = createSlice({
     reducers: {
         addNewUser: (state, action: PayloadAction<User>) => {
             const id = crypto.randomUUID()
-            const todosId: typeof crypto.randomUUID[] = [];
 
-            return [...state, { id, todosId, ...action.payload }]
+            return [...state, { id, ...action.payload }]
         },
 
         updateUserById: (state, action: PayloadAction<UserWithId>) => {

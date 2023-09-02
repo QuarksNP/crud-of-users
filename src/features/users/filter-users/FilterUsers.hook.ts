@@ -1,4 +1,4 @@
-import { UserWithId } from "@users-types/types";
+import { UserWithId } from "@global-types/types";
 import { type ChangeEvent, useState } from "react";
 
 export const useFilterUsersByName = (currentUsers: UserWithId[]) => {

@@ -1,11 +1,12 @@
-import { useRoute } from "wouter";
+import { Link, useRoute } from "wouter";
 
 import {
-  useAppSelector,
   getUserById,
   useUsersActions,
   UserFormModal,
 } from "../../features/users";
+
+import { useAppSelector } from "../../features/store";
 
 import * as style from "./user-by-id.css";
 
@@ -20,6 +21,11 @@ export default function UserByIdPage() {
 
   return (
     <section className={style.section}>
+      <Link href="/">
+        <button className={style.btn_home}>
+          🏠Home
+        </button>
+      </Link>
       <h1>{currentUser?.name} Profile</h1>
 
       <picture className={style.picture}>

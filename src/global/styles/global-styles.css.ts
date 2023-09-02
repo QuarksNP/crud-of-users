@@ -6,7 +6,7 @@ export const Kanit = 'Kanit, sans-serif';
 
 globalStyle('#root', {
     backgroundColor: vars.colors.Black_600,
-    minHeight: '100vh'
+    height: '100vh'
 })
 
 globalStyle('*', {

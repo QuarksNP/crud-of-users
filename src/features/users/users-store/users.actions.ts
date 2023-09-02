@@ -1,6 +1,6 @@
-import { UserId } from "@users-types/types"
+import { UserId } from "@global-types/types"
 
-import { useAppDispatch } from "./users.dispatch"
+import { useAppDispatch } from "../../store"
 
 import { addNewUser, deleteUserById, updateUserById } from "./users.slice"
 

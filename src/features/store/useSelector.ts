@@ -1,4 +1,4 @@
-import type { RootState } from "@users-types/types";
+import type { RootState } from "@global-types/types";
 import type { TypedUseSelectorHook } from "react-redux";
 
 import { useSelector } from "react-redux";

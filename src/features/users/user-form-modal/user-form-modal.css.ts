@@ -2,9 +2,7 @@ import { StyleRule, style } from "@vanilla-extract/css";
 
 import { baseGreenColorTransition } from "@global/styles";
 
-import { Kanit } from "@global/styles/global-styles.css";
-
-import { vars } from "@global/styles/vars.css";
+import { Kanit, vars } from "@global/styles";
 
 
 export const article = style({
@@ -16,7 +14,7 @@ export const article = style({
     maxWidth: '460px',
     borderRadius: '5px',
     padding: vars.space.Medium,
-    backgroundColor: vars.colors.Black_600,
+    backgroundColor: vars.colors.Black_400,
     color: vars.colors.White,
     fontFamily: Kanit,
     zIndex: 30
@@ -50,6 +48,7 @@ export const fieldset = style({
 
 export const container_info = style({
     display: 'flex',
+    flexWrap: 'wrap',
     gap: vars.space.Large,
 
     '& > div': {

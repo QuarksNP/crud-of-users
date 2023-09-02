@@ -8,7 +8,7 @@
     "baseUrl": ".",
     "paths": {
       "@global/*": ["src/global/*"],
-      "@users-types/*": ["src/features/users/types/*"]
+      "@global-types/*": ["src/features/types/*"]
     },
 
     /* Bundler mode */

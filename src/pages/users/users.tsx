@@ -4,11 +4,12 @@ import {
   UserContainerModal,
   FilterUsers,
   ListOfUsers,
-  useAppSelector,
   useUsersActions,
   useOpenModal,
   useFilterUsersByName,
 } from "../../features/users";
+
+import { useAppSelector } from "../../features/store";
 
 import { Background } from "../../features/ui";
 
@@ -50,7 +51,7 @@ export default function UsersPage() {
       <UserContainerModal open={openModal} handleCloseModal={handleOpenModal}>
         <UserFormModal handleSubmit={handleUser} />
       </UserContainerModal>
-      
+
       <ListOfUsers
         users={usersFiltered.length ? usersFiltered : users}
         handleUpdateUser={handleUser}
